@@ -58,7 +58,7 @@ class MainViewModel @Inject constructor(private val olxRepository: OlxRepository
         }
     }
 
-    fun showLoader(show: Boolean) {
+    private fun showLoader(show: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             if (show != _showLoader.value) {
                 _showLoader.postValue(show)
