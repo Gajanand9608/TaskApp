@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class OlxRepository @Inject constructor(private val OlxApi: OlxAPI) {
 
-    // below parameters we should pass to this function as a paramters
+    // below parameters we should pass to this function as a paramters but right now I am setting as per the curl
     suspend fun getData(): retrofit2.Response<Response?> {
         return OlxApi.getData(
             category = 81,

@@ -36,7 +36,7 @@ class MainViewModel @Inject constructor(private val olxRepository: OlxRepository
         getData()
     }
 
-    fun getData(){
+    private fun getData(){
         viewModelScope.launch(Dispatchers.IO) {
             showLoader(true)
             val response = try{

@@ -7,7 +7,6 @@ import retrofit2.http.Query
 import retrofit2.http.Url
 
 
-// this code will be used when retrofit instance is successfully created
 interface OlxAPI {
 
     @GET("api/relevance/v4/search")
