@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.example.demoproject2.model.DataItem
 
 @Composable
-fun CommonElevatedCard(dataItem: DataItem) {
+fun CommonElevatedCard(dataItem: DataItem?) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
@@ -28,7 +28,7 @@ fun CommonElevatedCard(dataItem: DataItem) {
             .wrapContentHeight()
     ) {
         CommonTextView(
-            dataItem.title ?: "No Title",
+            dataItem?.title ?: "No Title",
             style = TextStyle(
                 fontSize = 18.sp,
                 color = Color.Red,
@@ -36,7 +36,7 @@ fun CommonElevatedCard(dataItem: DataItem) {
             )
         )
         CommonTextView(
-            dataItem.price.value.display ?: "Price not available",
+            dataItem?.price?.value?.display ?: "Price not available",
             TextStyle(
                 fontSize = 14.sp,
                 color = Color.Blue,
@@ -48,7 +48,7 @@ fun CommonElevatedCard(dataItem: DataItem) {
             horizontalArrangement = Arrangement.Center
         ) {
             CommonImageView(
-                imageUrl = dataItem.images[0].big.url,
+                imageUrl = dataItem?.images?.get(0)?.big?.url,
                 modifier = Modifier
                     .size(200.dp)
                     .padding(10.dp)

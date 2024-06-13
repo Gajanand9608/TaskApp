@@ -32,14 +32,16 @@ fun HomePage(modifier: Modifier, showLoader: Boolean?, response: Response?) {
         exit = slideOutVertically()
     ) {
         val data = response!!.data
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(20.dp)
-        ) {
-            items(data) {
-                CommonElevatedCard(it)
-                Spacer(modifier = Modifier.height(20.dp))
+        data?.let {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(20.dp)
+            ) {
+                items(it) {
+                    CommonElevatedCard(it)
+                    Spacer(modifier = Modifier.height(20.dp))
+                }
             }
         }
     }
